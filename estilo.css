@@ -1,0 +1,246 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: #000; /* preto sólido */
+  color: #ffffff; /* branco */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #050505;
+  border-right: 2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 15px #ffffff;
+  object-fit: cover;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.profile-pic:hover {
+  box-shadow: 0 0 35px #ffffff;
+  transform: scale(1.05);
+}
+
+.sidebar h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 8px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.social-nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+}
+
+.social-btn {
+  border: 2px solid transparent;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  width: 52px;
+  height: 52px;
+  background-color: #111;
+}
+
+.social-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Botões com branco */
+.social-btn.email {
+  border-color: #ffffff;
+}
+
+.social-btn.email:hover {
+  box-shadow: 0 0 15px 5px #ffffff;
+  transform: scale(1.15);
+  border-color: #ffffff;
+}
+
+.social-btn.whatsapp {
+  border-color: #ffffff;
+}
+
+.social-btn.whatsapp:hover {
+  box-shadow: 0 0 15px 5px #ffffff;
+  transform: scale(1.15);
+  border-color: #ffffff;
+}
+
+.social-btn.linkedin {
+  border-color: #ffffff;
+}
+
+.social-btn.linkedin:hover {
+  box-shadow: 0 0 15px 5px #ffffff;
+  transform: scale(1.15);
+  border-color: #ffffff;
+}
+
+.social-btn.github {
+  border-color: #ffffff;
+}
+
+.social-btn.github:hover {
+  box-shadow: 0 0 15px 5px #ffffff;
+  transform: scale(1.15);
+  border-color: #ffffff;
+}
+
+/* Conteúdo Principal */
+.content {
+  padding: 50px 60px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Seções */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  border-left: 6px solid #ffffff;
+  padding-left: 14px;
+  color: #ffffff;
+}
+
+/* Projeto */
+.project-card {
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 22px 28px;
+  box-shadow: 0 0 10px #ffffff;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 25px 5px #ffffff;
+  transform: translateY(-6px);
+}
+
+.project-card h3 {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Currículo */
+.resume-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.resume-card {
+  flex: 1 1 30%;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  padding: 20px 26px;
+  box-shadow: 0 0 8px #ffffff;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: default;
+  min-width: 220px;
+}
+
+.resume-card:hover {
+  box-shadow: 0 0 25px 6px #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.resume-card h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Animação neon pulse */
+@keyframes pulseNeon {
+  0%, 100% {
+    box-shadow: 0 0 6px 3px #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 15px 6px #ffffff;
+  }
+}
+
+/* Scroll custom */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #ffffffaa;
+  border-radius: 4px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+  }
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 10px;
+    border-right: none;
+    border-bottom: 2px solid #ffffff;
+  }
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+  .sidebar h1 {
+    display: none;
+  }
+  .content {
+    padding: 25px 20px;
+  }
+  .resume-cards {
+    flex-direction: column;
+  }
+  .resume-card {
+    flex: 1 1 auto;
+    min-width: auto;
+  }
+}
